@@ -25,6 +25,7 @@ public class PlayerBehaviour : MonoBehaviour
     [SerializeField] GameObject camera;
     float timerDamage;
     float timerHeal;
+
     private void OnTriggerStay(Collider other)
     {
         collider = other.GetComponent<LightCollider>();
