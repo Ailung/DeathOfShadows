@@ -25,6 +25,7 @@ public class PlayerBehaviour : MonoBehaviour
     [SerializeField] GameObject camera;
     float timerDamage;
     float timerHeal;
+
     private void OnTriggerStay(Collider other)
     {
         collider = other.GetComponent<LightCollider>();
@@ -62,7 +63,7 @@ public class PlayerBehaviour : MonoBehaviour
                 other.gameObject.SetActive(false);
                 gameObject.GetComponent<FirstPersonMovement>().speed = 4;
                 gameObject.GetComponent<FirstPersonMovement>().canRun = true;
-                camera.transform.Rotate(new Vector3(0, 0, camera.transform.rotation.eulerAngles.z * -1));
+                camera.gameObject.GetComponent<FirstPersonLook>().TiltCamera(0f, 10f);
             } else
             {
                 StartCoroutine(tensionGenerator());
@@ -102,7 +103,7 @@ public class PlayerBehaviour : MonoBehaviour
         gameObject.transform.position = TensionPosition.transform.position;
         yield return new WaitForSeconds(tensionTime);
 
-        camera.transform.Rotate(new Vector3(0, 0, 1));
+        camera.gameObject.GetComponent<FirstPersonLook>().TiltCamera(30f, 10f);
 
         if (lastSpeed <= 1)
         {
