@@ -35,14 +35,14 @@ public class FirstPersonLook : MonoBehaviour
         Quaternion baseRotation = Quaternion.AngleAxis(-velocity.y, Vector3.right);
         character.localRotation = Quaternion.AngleAxis(velocity.x, Vector3.up);
 
-        if (isTilted)
-        {
-            currentTiltAngle = Mathf.Lerp(currentTiltAngle, maxTiltAngle, Time.deltaTime * 10f);
-        }
-        else
-        {
-            currentTiltAngle = Mathf.Lerp(currentTiltAngle, 0f, Time.deltaTime * 10f);
-        }
+        //if (isTilted)
+        //{
+        //    currentTiltAngle = Mathf.Lerp(currentTiltAngle, maxTiltAngle, Time.deltaTime * 10f);
+        //}
+        //else
+        //{
+        //    currentTiltAngle = Mathf.Lerp(currentTiltAngle, 0f, Time.deltaTime * 10f);
+        //}
 
         Quaternion tiltRotation = Quaternion.Euler(0, 0, currentTiltAngle);
         transform.localRotation = baseRotation * tiltRotation;
@@ -51,6 +51,11 @@ public class FirstPersonLook : MonoBehaviour
         {
             ToggleTilt();
         }
+    }
+
+    public void TiltCamera(float tiltAngle, float time)
+    {
+        currentTiltAngle = Mathf.Lerp(currentTiltAngle, tiltAngle, Time.deltaTime * time);
     }
 
     private void ToggleTilt()
