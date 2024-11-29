@@ -8,6 +8,8 @@ TagManager:
   - EndPasillo
   - AgainPasillo
   - TensionTrigger
+  - KeyItem1
+  - KeyItem2
   layers:
   - Default
   - TransparentFX
@@ -17,7 +19,7 @@ TagManager:
   - UI
   - Lights
   - Post Processing
-  - 
+  - Items
   - 
   - 
   - 
