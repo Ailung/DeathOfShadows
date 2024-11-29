@@ -50,13 +50,30 @@ public class CharacterPickupSystem : MonoBehaviour
                     case "LightSwitch":
                         SwitchLightOnOff(hit.collider.gameObject);
                         break;
+                    case "Door":
+                        DoorInteraction(hit.collider.gameObject);
+                        break;
+                    case "DoorKey1":
+                        if (keyItem1) { DoorInteraction(hit.collider.gameObject); }
+                        break;
+                    case "DoorKey2":
+                        if (keyItem2) { DoorInteraction(hit.collider.gameObject); }
+                        break;
+                    case "DoorPink":
+                        //if (keyItem2) {  }
+                        break;
                     default:
                         throw new Exception("Unknown item tag: " + hit.collider.gameObject.tag);
                 }
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.G) && !hasFlashlight) { DropFlashlight(); }
+        if (Input.GetKeyDown(KeyCode.G) && hasFlashlight) { DropFlashlight(); }
+    }
+
+    private void DoorInteraction(GameObject door)
+    {
+        door.GetComponent<DoorScript>().Interact();
     }
 
     private void SwitchLightOnOff(GameObject lightSwitch)
