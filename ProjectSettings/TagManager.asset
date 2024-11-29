@@ -10,6 +10,7 @@ TagManager:
   - TensionTrigger
   - KeyItem1
   - KeyItem2
+  - Flashlight
   layers:
   - Default
   - TransparentFX
@@ -20,7 +21,7 @@ TagManager:
   - Lights
   - Post Processing
   - Items
-  - 
+  - FloorLayer
   - 
   - 
   - 
