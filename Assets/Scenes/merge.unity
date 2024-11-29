@@ -3877,8 +3877,8 @@ ReflectionProbe:
   m_TimeSlicingMode: 0
   m_Resolution: 1024
   m_UpdateFrequency: 0
-  m_BoxSize: {x: 1.0519314, y: 4.479209, z: 5.8647637}
-  m_BoxOffset: {x: -0.093152046, y: 0.7874694, z: 0.6724832}
+  m_BoxSize: {x: 3.7381496, y: 4.479209, z: 5.8647637}
+  m_BoxOffset: {x: 1.2399225, y: 0.7874694, z: 0.6724832}
   m_NearClip: 0.3
   m_FarClip: 1000
   m_ShadowDistance: 100
@@ -3888,7 +3888,7 @@ ReflectionProbe:
     serializedVersion: 2
     m_Bits: 4294967295
   m_IntensityMultiplier: 1
-  m_BlendDistance: 0
+  m_BlendDistance: 1
   m_HDR: 1
   m_BoxProjection: 1
   m_RenderDynamicObjects: 0
@@ -4911,8 +4911,8 @@ ReflectionProbe:
   m_TimeSlicingMode: 2
   m_Resolution: 1024
   m_UpdateFrequency: 0
-  m_BoxSize: {x: 5.522537, y: 2.966909, z: 9.631027}
-  m_BoxOffset: {x: 0.878891, y: 0.4476912, z: -0.18448639}
+  m_BoxSize: {x: 5.522537, y: 2.966909, z: 6.102245}
+  m_BoxOffset: {x: 0.878891, y: 0.4476912, z: -1.9488776}
   m_NearClip: 0.3
   m_FarClip: 1000
   m_ShadowDistance: 100
@@ -4922,7 +4922,7 @@ ReflectionProbe:
     serializedVersion: 2
     m_Bits: 4294967295
   m_IntensityMultiplier: 1
-  m_BlendDistance: 0
+  m_BlendDistance: 1
   m_HDR: 1
   m_BoxProjection: 1
   m_RenderDynamicObjects: 0
@@ -16007,8 +16007,8 @@ ReflectionProbe:
   m_TimeSlicingMode: 0
   m_Resolution: 1024
   m_UpdateFrequency: 0
-  m_BoxSize: {x: 5.696352, y: 4.479209, z: 3.5243592}
-  m_BoxOffset: {x: 0.154603, y: 0.7874694, z: 0.12046027}
+  m_BoxSize: {x: 12.368562, y: 4.791472, z: 3.5243592}
+  m_BoxOffset: {x: 3.4907079, y: 0.6313379, z: 0.12046027}
   m_NearClip: 0.3
   m_FarClip: 1000
   m_ShadowDistance: 100
@@ -16018,7 +16018,7 @@ ReflectionProbe:
     serializedVersion: 2
     m_Bits: 4294967295
   m_IntensityMultiplier: 1
-  m_BlendDistance: 0
+  m_BlendDistance: 1
   m_HDR: 1
   m_BoxProjection: 0
   m_RenderDynamicObjects: 0
@@ -21689,6 +21689,71 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!1 &1271900851
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1271900853}
+  - component: {fileID: 1271900852}
+  m_Layer: 0
+  m_Name: Reflection Probe (4)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!215 &1271900852
+ReflectionProbe:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1271900851}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Type: 0
+  m_Mode: 1
+  m_RefreshMode: 0
+  m_TimeSlicingMode: 2
+  m_Resolution: 1024
+  m_UpdateFrequency: 0
+  m_BoxSize: {x: 4.1839676, y: 2.8875089, z: 3.849996}
+  m_BoxOffset: {x: 1.5481758, y: 0.40799117, z: -0.3142259}
+  m_NearClip: 0.3
+  m_FarClip: 1000
+  m_ShadowDistance: 100
+  m_ClearFlags: 1
+  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IntensityMultiplier: 1
+  m_BlendDistance: 1
+  m_HDR: 1
+  m_BoxProjection: 1
+  m_RenderDynamicObjects: 0
+  m_UseOcclusionCulling: 1
+  m_Importance: 1
+  m_CustomBakedTexture: {fileID: 0}
+--- !u!4 &1271900853
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1271900851}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -18.953, y: 1.031, z: 1.853}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1272234152
 GameObject:
   m_ObjectHideFlags: 0
@@ -37757,6 +37822,7 @@ SceneRoots:
   - {fileID: 1838106001}
   - {fileID: 2001413857}
   - {fileID: 282768959}
+  - {fileID: 1271900853}
   - {fileID: 701292611}
   - {fileID: 1008462113}
   - {fileID: 211527815}
