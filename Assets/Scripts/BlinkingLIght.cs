@@ -6,10 +6,14 @@ public class BlinkingLIght : MonoBehaviour
 {
     private Light light;
     [SerializeField] private Light[] lights;
+    [SerializeField] private float[] times;
+    [SerializeField] private float[] intensities;
+    private int i = 0;
 
     [SerializeField] float minTime;
     [SerializeField] float maxTime;
-    [SerializeField] float timer;
+    [SerializeField] bool pattern;
+     float timer;
     
     // Start is called before the first frame update
     void Awake()
@@ -21,32 +25,80 @@ public class BlinkingLIght : MonoBehaviour
     private void Start()
     {
         timer = Random.Range(minTime, maxTime);
+        if (pattern)
+        {
+            blink();
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        blink();
+        if (!pattern)
+        {
+            blink();
+        }
     }
 
     private void blink() 
     {
-        if (timer > 0) timer -= Time.deltaTime;
-
-        if (timer <= 0)
+        if (pattern) 
         {
-            if (lights.Length <= 0) 
+
+            if (times.Length == intensities.Length && i < times.Length) 
             {
-                light.enabled = !light.enabled;
+
+                StartCoroutine(patternBlink(intensities[i], times[i]));
+
             } else
             {
-                foreach (Light light in lights)
+                i = 0;
+                StartCoroutine(patternBlink(intensities[i], times[i]));
+            }
+        } 
+        else
+        {
+            if (timer > 0) timer -= Time.deltaTime;
+
+            if (timer <= 0)
+            {
+
+                if (lights.Length <= 0)
                 {
                     light.enabled = !light.enabled;
+
                 }
+                else
+                {
+                    foreach (Light light in lights)
+                    {
+                        light.enabled = !light.enabled;
+                    }
+                }
+                timer = Random.Range(minTime, maxTime);
             }
-            timer = Random.Range(minTime, maxTime);
+            
         }
+        
+    }
+
+    private IEnumerator patternBlink(float intensity, float time)
+    {
+        
+        if (lights.Length <= 0)
+        {
+            light.intensity = intensity;
+        }
+        else
+        {
+            foreach (Light light in lights)
+            {
+                light.intensity = intensity;
+            }
+        }
+        i++;
+        yield return new WaitForSeconds(time);
+        blink();
     }
 
 }
