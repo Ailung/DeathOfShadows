@@ -47,6 +47,9 @@ public class CharacterPickupSystem : MonoBehaviour
                     case "Flashlight":
                         if (!hasFlashlight) FlashlightOn(hit.collider.gameObject);
                         break;
+                    case "LightSwitch":
+                        SwitchLightOnOff(hit.collider.gameObject);
+                        break;
                     default:
                         throw new Exception("Unknown item tag: " + hit.collider.gameObject.tag);
                 }
@@ -55,6 +58,12 @@ public class CharacterPickupSystem : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.G) && !hasFlashlight) { DropFlashlight(); }
     }
+
+    private void SwitchLightOnOff(GameObject lightSwitch)
+    {
+        
+    }
+
     private void DropFlashlight()
     {
         RaycastHit hit;
