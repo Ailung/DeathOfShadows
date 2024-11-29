@@ -14,6 +14,8 @@ public class BlinkingLIght : MonoBehaviour
     [SerializeField] float minTime;
     [SerializeField] float maxTime;
     [SerializeField] bool pattern;
+    [SerializeField] bool sound;
+    [SerializeField] string soundName;
      float timer;
     
     // Start is called before the first frame update
@@ -89,12 +91,20 @@ public class BlinkingLIght : MonoBehaviour
         if (lights.Length <= 0)
         {
             light.intensity = intensity;
+            if (intensity > 0 && sound)
+            {
+                AudioManager.Instance.PlaySFX(soundName);
+            }
         }
         else
         {
             foreach (Light light in lights)
             {
                 light.intensity = intensity;
+                if (intensity > 0 && sound)
+                {
+                    AudioManager.Instance.PlaySFX(soundName);
+                }
             }
         }
         i++;

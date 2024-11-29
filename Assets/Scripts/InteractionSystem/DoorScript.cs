@@ -22,15 +22,16 @@ public class DoorScript : MonoBehaviour
     }
     public void Interact()
     {
-        Debug.Log("interact");
 
         if (isOpen && !opening && !closing) //close
         {
             closing = true;
+            AudioManager.Instance.PlaySFX("doorClose");
         }
         else if (!isOpen && !opening & !closing) //open
         {
             opening = true;
+            AudioManager.Instance.PlaySFX("doorOpen");
         }
         else if (opening) 
         {

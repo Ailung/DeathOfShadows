@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/merge.unity
     guid: a9df8a778db9a2c4eb34d8cd5f90837e
+  - enabled: 1
+    path: Assets/Scenes/CreditsScene.unity
+    guid: 2c68a5987e8fad6458c228401adc98de
   m_configObjects: {}

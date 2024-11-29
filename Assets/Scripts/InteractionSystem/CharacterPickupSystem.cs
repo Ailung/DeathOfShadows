@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Unity.Burst.CompilerServices;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 
 public class CharacterPickupSystem : MonoBehaviour
@@ -60,7 +61,7 @@ public class CharacterPickupSystem : MonoBehaviour
                         if (keyItem2) { DoorInteraction(hit.collider.gameObject); }
                         break;
                     case "DoorPink":
-                        //if (keyItem2) {  }
+                        SceneManager.LoadScene("CreditsScene");
                         break;
                     default:
                         throw new Exception("Unknown item tag: " + hit.collider.gameObject.tag);
