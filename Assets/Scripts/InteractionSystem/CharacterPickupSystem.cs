@@ -10,20 +10,29 @@ public class CharacterPickupSystem : MonoBehaviour
 {
     private bool keyItem1;
     private bool keyItem2;
-    [SerializeField] private GameObject flashlight;
+    [SerializeField] private GameObject playerFlashlight;
+    [SerializeField] private GameObject itemFlashlight;
+    private GameObject player;
 
     [SerializeField] private float pickupRaycastDistance = 1f;
     [SerializeField] private float placeRaycastDistance = 2f;
-    public LayerMask pickableLayer;
-    public LayerMask floorLayer;
+    [SerializeField] public LayerMask itemsLayer;
+    [SerializeField] public LayerMask floorLayer;
+    private int itemsLayerInt;
+    private bool hasFlashlight = false;
 
+    private void Awake()
+    {
+        itemsLayerInt = LayerMask.NameToLayer("ItemsLayer");
+        player = transform.parent.gameObject;
+    }
 
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
             RaycastHit hit;
-            if (Physics.Raycast(transform.position, transform.forward, out hit, pickupRaycastDistance, pickableLayer))
+            if (Physics.Raycast(transform.position, transform.forward, out hit, pickupRaycastDistance, itemsLayer))
             {
                 switch (hit.collider.gameObject.tag)
                 {
@@ -36,7 +45,7 @@ public class CharacterPickupSystem : MonoBehaviour
                         Destroy(hit.collider.gameObject);
                         break;
                     case "Flashlight":
-                        FlashlightOn(hit.collider.gameObject);
+                        if (!hasFlashlight) FlashlightOn(hit.collider.gameObject);
                         break;
                     default:
                         throw new Exception("Unknown item tag: " + hit.collider.gameObject.tag);
@@ -44,36 +53,34 @@ public class CharacterPickupSystem : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.G)) { DropFlashlight(); }
+        if (Input.GetKeyDown(KeyCode.G) && !hasFlashlight) { DropFlashlight(); }
     }
     private void DropFlashlight()
     {
         RaycastHit hit;
         if (Physics.Raycast(transform.position, transform.forward, out hit, placeRaycastDistance, floorLayer))
         {
-            Vector3 spawnPosition = hit.point + new Vector3(0, 0, (float)0.5);
-            Quaternion spawnRotation = Quaternion.LookRotation(transform.forward);
-            spawnRotation.x = 90f;
-            Debug.Log(spawnRotation + "wanted");
-            GameObject newFlashlight = Instantiate(flashlight, spawnPosition, Quaternion.identity);
-            Debug.Log(newFlashlight.transform.rotation + "not final");
-            newFlashlight.transform.rotation = spawnRotation;
-            Debug.Log(newFlashlight.transform.rotation + "actual");
+            Vector3 spawnPosition = hit.point + new Vector3(0,.04f,0);
 
-            //newFlashlight.tag = "Flashlight";
-            //newFlashlight.layer = pickableLayer;
+            Quaternion spawnRotation = Quaternion.Euler(90, player.transform.eulerAngles.y,0);
+
+            GameObject newFlashlight = Instantiate(itemFlashlight, spawnPosition, spawnRotation);
+            newFlashlight.tag = "Flashlight";
+            newFlashlight.layer = itemsLayerInt;
 
             FlashlightOff();
         }
     }
     private void FlashlightOn(GameObject externalGameObject)
     {
-        flashlight.SetActive(true);
+        playerFlashlight.SetActive(true);
         Destroy(externalGameObject);
+        hasFlashlight = true;
     }
     private void FlashlightOff()
     {
-        flashlight.SetActive(false);
+        playerFlashlight.SetActive(false);
+        hasFlashlight = false;
     }
 
 
