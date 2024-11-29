@@ -61,7 +61,7 @@ public class CharacterPickupSystem : MonoBehaviour
 
     private void SwitchLightOnOff(GameObject lightSwitch)
     {
-        
+        lightSwitch.GetComponent<LightSwitch>().changeState();
     }
 
     private void DropFlashlight()
