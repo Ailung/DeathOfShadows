@@ -11,6 +11,10 @@ TagManager:
   - KeyItem1
   - KeyItem2
   - Flashlight
+  - Door
+  - DoorPink
+  - DoorKey1
+  - DoorKey2
   layers:
   - Default
   - TransparentFX
