@@ -19,6 +19,9 @@ public class CharacterPickupSystem : MonoBehaviour
     [SerializeField] private float placeRaycastDistance = 2f;
     [SerializeField] public LayerMask itemsLayer;
     [SerializeField] public LayerMask floorLayer;
+
+    [SerializeField] public GameObject crosshair; 
+
     private int itemsLayerInt;
     private bool hasFlashlight = false;
 
@@ -26,10 +29,13 @@ public class CharacterPickupSystem : MonoBehaviour
     {
         itemsLayerInt = LayerMask.NameToLayer("ItemsLayer");
         player = transform.parent.gameObject;
+        crosshair.SetActive(false);
     }
 
     private void Update()
     {
+        CheckCrosshair();
+
         if (Input.GetKeyDown(KeyCode.E))
         {
             RaycastHit hit;
@@ -110,7 +116,18 @@ public class CharacterPickupSystem : MonoBehaviour
         hasFlashlight = false;
     }
 
-
+    private void CheckCrosshair()
+    {
+        RaycastHit hit;
+        if (Physics.Raycast(transform.position, transform.forward, out hit, pickupRaycastDistance, itemsLayer))
+        {
+            crosshair.SetActive(true);
+        }
+        else
+        {
+            crosshair.SetActive(false);
+        }
+    }
 
 
 }
