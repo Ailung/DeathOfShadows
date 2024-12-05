@@ -61,10 +61,10 @@ public class CharacterPickupSystem : MonoBehaviour
                         DoorInteraction(hit.collider.gameObject);
                         break;
                     case "DoorKey1":
-                        if (keyItem1) { DoorInteraction(hit.collider.gameObject); }
+                        if (keyItem1) DoorInteraction(hit.collider.gameObject); 
                         break;
                     case "DoorKey2":
-                        if (keyItem2) { DoorInteraction(hit.collider.gameObject); }
+                        if (keyItem2) DoorInteraction(hit.collider.gameObject);
                         break;
                     case "DoorPink":
                         SceneManager.LoadScene("CreditsScene");
