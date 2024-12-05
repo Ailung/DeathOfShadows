@@ -78,10 +78,10 @@ public class AudioManager : MonoBehaviour
         
     }
 
-    public void PlaySFX(string name, AudioSource source)
-    {
-        Sound sound = Array.Find(sfxSounds, x => x.soundName == name);
-        if (sound == null) { Debug.Log("sfx " + name + " not found"); }
-        else { sfxSource.clip = sound.clip; source.Play(); }
-    }
+    //public void PlaySFX(string name, AudioSource source)
+    //{
+    //    Sound sound = Array.Find(sfxSounds, x => x.soundName == name);
+    //    if (sound == null) { Debug.Log("sfx " + name + " not found"); }
+    //    else { sfxSource.clip = sound.clip; source.Play(); }
+    //}
 }
