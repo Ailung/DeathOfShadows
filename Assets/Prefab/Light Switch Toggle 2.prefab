@@ -9,9 +9,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2182712781209249626}
-  m_Layer: 0
+  - component: {fileID: 3395598084745794802}
+  - component: {fileID: 7333150900683104900}
+  m_Layer: 8
   m_Name: Light Switch Toggle 2
-  m_TagString: Untagged
+  m_TagString: LightSwitch
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -24,8 +26,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 537232790769222164}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0.7072302, z: 0.7069834, w: 0}
-  m_LocalPosition: {x: 0.148, y: 0.844, z: -11.59}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -37,7 +39,45 @@ Transform:
   - {fileID: 5740277162857647343}
   - {fileID: 4381641134099982183}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: -89.98, y: 180, z: 0}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
+--- !u!65 &3395598084745794802
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 537232790769222164}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.001405108, y: 0.00042112093, z: 0.0013686164}
+  m_Center: {x: 0, y: -0.000018466506, z: 0.0006096472}
+--- !u!114 &7333150900683104900
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 537232790769222164}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89e5493959f5dc244814d84484c9decb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lights: []
+  isOn: 0
+  lightSwitches:
+  - {fileID: 6436024862538034609}
+  - {fileID: 4359831774616913460}
 --- !u!1 &545658798356188902
 GameObject:
   m_ObjectHideFlags: 0
@@ -49,7 +89,7 @@ GameObject:
   - component: {fileID: 4381641134099982183}
   - component: {fileID: 1174087237091245966}
   - component: {fileID: 6275861398744726763}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wall Plate.004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -133,7 +173,7 @@ GameObject:
   - component: {fileID: 2562048584561913000}
   - component: {fileID: 3006446826012198619}
   - component: {fileID: 5629013578489175233}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Screw.011
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -216,7 +256,7 @@ GameObject:
   - component: {fileID: 5740277162857647343}
   - component: {fileID: 2414364323347044525}
   - component: {fileID: 7542718725101890297}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Switch.005
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -299,7 +339,7 @@ GameObject:
   - component: {fileID: 6341709546950868488}
   - component: {fileID: 3121155062933945540}
   - component: {fileID: 8495864238145927880}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Screw.013
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -382,7 +422,7 @@ GameObject:
   - component: {fileID: 2232997449326390772}
   - component: {fileID: 3793480983957438747}
   - component: {fileID: 6479299317970453218}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Switch.004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -465,7 +505,7 @@ GameObject:
   - component: {fileID: 3743164281736237382}
   - component: {fileID: 4564184930993021590}
   - component: {fileID: 2158838234067911350}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Screw.010
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -548,7 +588,7 @@ GameObject:
   - component: {fileID: 3058275504301598789}
   - component: {fileID: 5844245456725204833}
   - component: {fileID: 9219733116079940368}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Screw.012
   m_TagString: Untagged
   m_Icon: {fileID: 0}

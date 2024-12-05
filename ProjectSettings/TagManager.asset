@@ -15,6 +15,7 @@ TagManager:
   - DoorPink
   - DoorKey1
   - DoorKey2
+  - LightSwitch
   layers:
   - Default
   - TransparentFX
