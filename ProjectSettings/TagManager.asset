@@ -8,6 +8,15 @@ TagManager:
   - EndPasillo
   - AgainPasillo
   - TensionTrigger
+  - KeyItem1
+  - KeyItem2
+  - Flashlight
+  - Door
+  - DoorPink
+  - DoorKey1
+  - DoorKey2
+  - LightSwitch
+  - Character
   layers:
   - Default
   - TransparentFX
@@ -17,8 +26,8 @@ TagManager:
   - UI
   - Lights
   - Post Processing
-  - 
-  - 
+  - ItemsLayer
+  - FloorLayer
   - 
   - 
   - 
