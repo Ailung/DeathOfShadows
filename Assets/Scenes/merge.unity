@@ -97,7 +97,8 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: 95276cc24ea69e74fbac6486d63d4fc9,
+    type: 2}
   m_LightingSettings: {fileID: 4890085278179872738, guid: 633e7883185d4cd4181fe06c9f61abac,
     type: 2}
 --- !u!196 &4
@@ -2829,7 +2830,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 0.5
+  m_Intensity: 0.2
   m_Range: 6.44
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -3849,7 +3850,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 0.13
+  m_Intensity: 0.07
   m_Range: 2.33
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -4115,7 +4116,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 0.13
+  m_Intensity: 0.07
   m_Range: 2.33
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -10739,7 +10740,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 0.2
+  m_Intensity: 0.1
   m_Range: 5
   m_SpotAngle: 103.032
   m_InnerSpotAngle: 94.834076
@@ -14258,7 +14259,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 0.2
+  m_Intensity: 0.1
   m_Range: 5
   m_SpotAngle: 103.032
   m_InnerSpotAngle: 94.834076
@@ -19666,7 +19667,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 0.2
+  m_Intensity: 0.1
   m_Range: 5
   m_SpotAngle: 103.032
   m_InnerSpotAngle: 94.834076
@@ -21207,7 +21208,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 0.2
+  m_Intensity: 0.1
   m_Range: 5
   m_SpotAngle: 103.032
   m_InnerSpotAngle: 94.834076
@@ -22351,7 +22352,7 @@ GameObject:
   - component: {fileID: 1238922411}
   m_Layer: 8
   m_Name: Door Six Panel
-  m_TagString: DoorKey1
+  m_TagString: Door
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -25033,7 +25034,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 0.2
+  m_Intensity: 0.1
   m_Range: 5
   m_SpotAngle: 103.032
   m_InnerSpotAngle: 94.834076
@@ -29092,7 +29093,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 0.2
+  m_Intensity: 0.1
   m_Range: 5
   m_SpotAngle: 103.032
   m_InnerSpotAngle: 94.834076
@@ -32101,7 +32102,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 0.2
+  m_Intensity: 0.1
   m_Range: 5
   m_SpotAngle: 103.032
   m_InnerSpotAngle: 94.834076
