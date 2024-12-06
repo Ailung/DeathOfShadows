@@ -16,6 +16,7 @@ public class BlinkingLIght : MonoBehaviour
     [SerializeField] bool pattern;
     [SerializeField] bool sound;
     [SerializeField] string soundName;
+    [SerializeField] AudioSource audioSource;
      float timer;
     
     // Start is called before the first frame update
@@ -93,7 +94,7 @@ public class BlinkingLIght : MonoBehaviour
             light.intensity = intensity;
             if (intensity > 0 && sound)
             {
-                AudioManager.Instance.PlaySFX(soundName);
+                AudioManager.Instance.PlaySFX(soundName, audioSource);
             }
         }
         else
@@ -103,7 +104,7 @@ public class BlinkingLIght : MonoBehaviour
                 light.intensity = intensity;
                 if (intensity > 0 && sound)
                 {
-                    AudioManager.Instance.PlaySFX(soundName);
+                    AudioManager.Instance.PlaySFX(soundName, audioSource);
                 }
             }
         }

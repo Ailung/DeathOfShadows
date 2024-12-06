@@ -25,10 +25,12 @@ public class LightSwitch : MonoBehaviour
         if (isOn)
         {
             foreach (GameObject lightSwitch in lightSwitches) { lightSwitch.transform.localEulerAngles = new Vector3(0, 0, 0); }
+            
         }
         else
         {
             foreach (GameObject lightSwitch in lightSwitches) { lightSwitch.transform.localEulerAngles = new Vector3(60, 0, 0); }
+            
         }
     }
 
@@ -37,10 +39,12 @@ public class LightSwitch : MonoBehaviour
         if (isOn)
         {
             foreach (Light light in lights) { light.enabled = true; }
+            AudioManager.Instance.PlaySFX("switch");
         }
         else
         {
             foreach (Light light in lights) { light.enabled = false; }
+            AudioManager.Instance.PlaySFX("switch");
         }
     }
 }

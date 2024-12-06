@@ -16,6 +16,7 @@ TagManager:
   - DoorKey1
   - DoorKey2
   - LightSwitch
+  - Character
   layers:
   - Default
   - TransparentFX

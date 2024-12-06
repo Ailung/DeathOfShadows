@@ -6,17 +6,21 @@ public class TriggerLights : MonoBehaviour
 {
     [SerializeField] private List<Light> lights;
     [SerializeField] private float timeToRestart;
-    [SerializeField] private bool restarBool;
+    [SerializeField] private bool restartBool;
     [SerializeField] private string soundName;
+    [SerializeField] private string soundName2;
+    [SerializeField] private AudioSource soundSource;
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        
-    }
-
-    private void OnCollisionExit(Collision collision)
-    {
-        
+        if (other.gameObject.CompareTag("Character"))
+        {
+            lightEffect();
+            if (!restartBool)
+            {
+                this.gameObject.SetActive(false);
+            }
+        }
     }
 
     private void lightEffect()
@@ -25,9 +29,9 @@ public class TriggerLights : MonoBehaviour
         {
             light.enabled = !light.enabled;
         }
-        AudioManager.Instance.PlaySFX(soundName);
+        AudioManager.Instance.PlaySFX(soundName, soundSource);
 
-        if (restarBool)
+        if (restartBool)
         {
             StartCoroutine(restartLight());
         }
@@ -40,6 +44,7 @@ public class TriggerLights : MonoBehaviour
         {
             light.enabled = !light.enabled;
         }
-        AudioManager.Instance.PlaySFX(soundName);
+        AudioManager.Instance.PlaySFX(soundName2, soundSource);
+        this.gameObject.SetActive(false);
     }
 }
