@@ -13,6 +13,7 @@ public class Crouch : MonoBehaviour
     [Header("Low Head")]
     [Tooltip("Head to lower when crouched.")]
     public Transform headToLower;
+    public Transform headToLower2;
     [HideInInspector]
     public float? defaultHeadYLocalPosition;
     public float crouchYHeadPosition = 1;
@@ -45,10 +46,12 @@ public class Crouch : MonoBehaviour
                 if (!defaultHeadYLocalPosition.HasValue)
                 {
                     defaultHeadYLocalPosition = headToLower.localPosition.y;
+                    defaultHeadYLocalPosition = headToLower2.localPosition.y;
                 }
 
                 // Lower the head.
                 headToLower.localPosition = new Vector3(headToLower.localPosition.x, crouchYHeadPosition, headToLower.localPosition.z);
+                headToLower2.localPosition = new Vector3(headToLower2.localPosition.x, crouchYHeadPosition, headToLower2.localPosition.z);
             }
 
             // Enforce a low colliderToLower.
@@ -92,6 +95,7 @@ public class Crouch : MonoBehaviour
                 if (headToLower)
                 {
                     headToLower.localPosition = new Vector3(headToLower.localPosition.x, defaultHeadYLocalPosition.Value, headToLower.localPosition.z);
+                    headToLower2.localPosition = new Vector3(headToLower2.localPosition.x, defaultHeadYLocalPosition.Value, headToLower2.localPosition.z);
                 }
 
                 // Reset the colliderToLower's height.
