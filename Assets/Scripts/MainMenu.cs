@@ -7,6 +7,7 @@ public class MainMenu : MonoBehaviour
 {
     public void Jugar()
     {
+        Cursor.visible = false;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
@@ -18,6 +19,7 @@ public class MainMenu : MonoBehaviour
 
     public void Creditos()
     {
+        Cursor.visible = true;
         SceneManager.LoadScene("CreditsScene");
     }
 
@@ -28,6 +30,7 @@ public class MainMenu : MonoBehaviour
 
     public void Menu()
     {
+        Cursor.visible = true;
         SceneManager.LoadScene("MainMenu");
     }
 }
